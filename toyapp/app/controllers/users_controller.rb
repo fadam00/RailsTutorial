@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  validates :content, length: {maximum: 140}
   # GET /users
   # GET /users.json
   def index
