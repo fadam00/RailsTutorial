@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Variables */
+
+$light-gray: #777;
+$gray-medium-light: #eaeaea;
+$gray: #555;
+$gray-darker: #222;
 /* Universal */
 
 body {
@@ -73,12 +79,12 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: $light-gray;
 
    a {
-  color: #555;
+  color: $gray;
     &:hover {
-    color: #222;
+    color: $gray-darker;
     }
   }
    small {
