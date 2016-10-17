@@ -2,8 +2,9 @@ require 'test_helper'
 
 class UserControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get user_new_url
+    get signup_path
     assert_response :success
+    assert_select "title", "Sign Up | Ruby on Rails Tutorial Sample App"
   end
 
 end
