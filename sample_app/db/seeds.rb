@@ -10,3 +10,13 @@ frank = User.create!(name: "Frank Adames", email: "frank@mail.com", password: "f
 lilly = User.create!(name: "Lillian Pham", email: "pham@gmail.com", password: "foobar", password_confirmation: "foobar")
 will = User.create!(name: "Will Ruck", email: "ruck@gmail.com", password: "foobar", password_confirmation: "foobar")
 steve = User.create!(name: "Steve Barnes", email: "steve@gmail.com", password: "foobar", password_confirmation: "foobar")
+
+99.times do |n|
+	name = Faker::Name.name
+	email = "example-#{n+1}@mail.com"
+	password = "password"
+	User.create!(name: name,
+				email: email,
+				password: 		password,
+				password_confirmation: password )
+end
