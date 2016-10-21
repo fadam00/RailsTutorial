@@ -4,12 +4,12 @@
 <%= will_paginate %>
 
 <ul class="users">
-	<% @users.each do |user| %>
-		<li>
-			<%= gravatar_for user, size: 50 %>
-			<%= link_to user.name, user %>
-		</li>
-	<% end %>
+ 	<%#@users.each do |user| %>  
+	<%#= render 'user' %>
+	<%# end %> 
+	<!-- In place of the loop you can use @users and Rails will automatically iterate through the list of all Users -->
+	<%= render @users %>
+
 </ul>
 
 <%= will_paginate %>
