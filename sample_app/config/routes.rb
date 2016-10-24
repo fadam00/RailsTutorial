@@ -30,8 +30,13 @@ Rails.application.routes.draw do
   end
 
 
+<<<<<<< HEAD
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+=======
+  resources :users
+  resources :microposts, only: [:create, :destroy]
+>>>>>>> 5a1ee018958dbe351607f940035d79221e78070c
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

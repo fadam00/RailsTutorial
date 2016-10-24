@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :microposts, dependent: :destroy
+<<<<<<< HEAD
 	has_many :active_relationships, class_name: "Relationship",
 									foreign_key: "follower_id",
 									dependent: :destroy
@@ -12,6 +13,8 @@ class User < ApplicationRecord
 	has_many :followers, through: :passive_relationships
 
 
+=======
+>>>>>>> 5a1ee018958dbe351607f940035d79221e78070c
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	before_save {email.downcase!}
 	validates :name, presence: true, length: {maximum: 50}
@@ -23,6 +26,7 @@ class User < ApplicationRecord
 
 
 		def feed
+<<<<<<< HEAD
 			following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
 			Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", following_ids: following_ids, user_id: id)
 		end
@@ -42,4 +46,8 @@ class User < ApplicationRecord
 			following.include?(other_user)
 		end
 
+=======
+			Micropost.where("user_id = ?", id)
+		end
+>>>>>>> 5a1ee018958dbe351607f940035d79221e78070c
 end
